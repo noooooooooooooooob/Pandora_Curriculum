@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class Player_Attack : MonoBehaviour
 {
+    public bool canAttack = true;
     public Camera_Follow camera_Follow;
     float isCharging = 0;
     public float maxCharge;
 
     void Update()
     {
+        if (!canAttack) return;
         if (Input.GetMouseButton(0))
         {
             isCharging += Time.deltaTime;
