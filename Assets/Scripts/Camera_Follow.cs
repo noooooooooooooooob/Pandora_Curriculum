@@ -1,34 +1,50 @@
 using UnityEngine;
-using DG.Tweening;
+using System.Collections;
 
 public class Camera_Follow : MonoBehaviour
 {
-    public Transform target;
-    public float lerpSpeed = 1.0f;
+    public Transform target;          // 따라갈 대상
+    public float smoothTime = 0.2f;   // 부드럽게 이동하는 시간
+    private Vector3 velocity;
     private Vector3 offset;
-    private Vector3 targetPos;
-    float originalSize = 6f;
+    private float originalSize = 6f;
 
     private void Start()
     {
         if (target == null) return;
-
         offset = transform.position - target.position;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (target == null) return;
 
-        targetPos = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
+        transform.position = target.position;
     }
+
     public void PlusCameraSize(float size)
     {
-        Camera.main.orthographicSize = originalSize + size * 2;
+        Camera.main.orthographicSize = originalSize + size * 1.5f;
     }
+
     public void ResetCameraSize()
     {
-        DOTween.To(() => Camera.main.orthographicSize, x => Camera.main.orthographicSize = x, originalSize, 0.5f);
+        StartCoroutine(ResetSizeSmooth());
+    }
+
+    private IEnumerator ResetSizeSmooth()
+    {
+        float duration = 0.5f;
+        float elapsed = 0f;
+        float startSize = Camera.main.orthographicSize;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            Camera.main.orthographicSize = Mathf.Lerp(startSize, originalSize, elapsed / duration);
+            yield return null;
+        }
+
+        Camera.main.orthographicSize = originalSize;
     }
 }

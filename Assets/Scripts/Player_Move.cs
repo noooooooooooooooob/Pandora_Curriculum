@@ -11,30 +11,37 @@ public class Player_Move : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    private void Update()
+    void FixedUpdate()
     {
         dir = Vector2.zero;
         if (Input.GetKey(KeyCode.A))
         {
             dir.x = -1;
+            playerDirection = Vector2.zero;
+            playerDirection = dir;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             dir.x = 1;
+            playerDirection = Vector2.zero;
+            playerDirection = dir;
         }
-
         if (Input.GetKey(KeyCode.W))
         {
             dir.y = 1;
+            playerDirection = Vector2.zero;
+            playerDirection = dir;
         }
         else if (Input.GetKey(KeyCode.S))
         {
             dir.y = -1;
+            playerDirection = Vector2.zero;
+            playerDirection = dir;
         }
         if (!canMove) return;
 
         dir.Normalize();
-        playerDirection = dir;
+        
         rb.linearVelocity = speed * dir;
     }
     float rollPower = 10f;
