@@ -7,8 +7,8 @@ public class Player_Roll : MonoBehaviour
     public Player_Attack player_Attack;
     public Player_Stamina_Controller staminaController;
     public Player_Animation player_Animation;
+    public HP_Controller hpController;
     public float invincibilityDuration = 0.5f;
-    bool isInvincible = false;
 
     void Update()
     {
@@ -19,7 +19,7 @@ public class Player_Roll : MonoBehaviour
     }
     public void Roll()
     {
-        if (!isInvincible)
+        if (!hpController.isInvincible)
         {
             StartCoroutine(InvincibilityCoroutine());
         }
@@ -28,17 +28,17 @@ public class Player_Roll : MonoBehaviour
     {
         if (!staminaController.DecreaseStamina())
         {
-            isInvincible = false;
+            hpController.isInvincible = false;
             yield break;
         }
 
-        isInvincible = true;
+        hpController.isInvincible = true;
         player_Attack.canAttack = false;
         player_Move.canMove = false;
         player_Move.Roll(invincibilityDuration);
         player_Animation.Roll(invincibilityDuration);
         yield return new WaitForSeconds(invincibilityDuration);
-        isInvincible = false;
+        hpController.isInvincible = false;
         player_Attack.canAttack = true;
         player_Move.canMove = true;
     }

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Player_Attack : MonoBehaviour
@@ -10,12 +11,15 @@ public class Player_Attack : MonoBehaviour
     public GameObject attackPrefab;
     float isCharging = 0;
     public float maxCharge;
+    public float minAttackRange;
     public float maxAttackRange;
+    public float maxAttackDisplayWidth; // 늘리기용
     float angle;
 
     void Start()
     {
         cam = Camera.main;
+        attackDisplay.SetActive(false);
     }
     void Update()
     {
@@ -30,15 +34,20 @@ public class Player_Attack : MonoBehaviour
             isCharging += Time.deltaTime;
             isCharging = Mathf.Clamp(isCharging, 0, maxCharge);
             camera_Follow.PlusCameraSize(isCharging);
-            DisplayAttack(maxAttackRange * isCharging);
+            DisplayAttack(isCharging / maxCharge * maxAttackDisplayWidth);
         }
         else if (Input.GetMouseButtonUp(0))
         {
+            float chargeRatio = isCharging / maxCharge;
+
+            float range = Mathf.Max(minAttackRange, chargeRatio * maxAttackRange);
+
+            Attack(range);
+
             isCharging = 0;
             player_Move.speed *= 2;
             attackDisplay.SetActive(false);
             camera_Follow.ResetCameraSize();
-            // Attack();
         }
     }
     void DisplayAttack(float range)
@@ -50,8 +59,14 @@ public class Player_Attack : MonoBehaviour
         attackDisplay.transform.rotation = Quaternion.Euler(0, 0, angle);
         attackDisplay.GetComponent<SpriteRenderer>().size = new Vector2(range, 1);
     }
-    void Attack()
+    void Attack(float range)
     {
-        
+        GameObject attack = Instantiate(attackPrefab, transform.position, Quaternion.Euler(0, 0, angle));
+        attack.transform.DOMove(
+            new Vector2(
+                transform.position.x + Mathf.Cos(angle * Mathf.Deg2Rad) * range,
+                transform.position.y + Mathf.Sin(angle * Mathf.Deg2Rad) * range),
+            1.0f
+        ).SetLink(gameObject, LinkBehaviour.KillOnDestroy).OnComplete(() => Destroy(attack));
     }
 }

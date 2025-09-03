@@ -4,12 +4,15 @@ using UnityEngine.UI;
 
 public class HP_Controller : MonoBehaviour
 {
+    public bool isInvincible = false;
+    public Player_Animation player_Animation;
     public UnityEvent onDie;
     public Slider hpBar;
     public int maxHP;
     int currentHP;
     public void Damage(int damageAmount)
     {
+        if (isInvincible) return;
         currentHP -= damageAmount;
         if (currentHP < 0)
         {

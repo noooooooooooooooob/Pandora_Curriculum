@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
     public bool canMove = true;
+    bool isRunning = false;
     public float speed;
     Rigidbody2D rb;
     Vector2 dir;
@@ -10,6 +11,17 @@ public class Player_Move : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isRunning = true;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            isRunning = false;
+        }
     }
     void FixedUpdate()
     {
@@ -41,7 +53,7 @@ public class Player_Move : MonoBehaviour
         if (!canMove) return;
 
         dir.Normalize();
-        
+        if(isRunning) dir *= 2;
         rb.linearVelocity = speed * dir;
     }
     float rollPower = 10f;
