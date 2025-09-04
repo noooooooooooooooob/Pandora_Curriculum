@@ -9377,6 +9377,7 @@ GameObject:
   - component: {fileID: 970560459}
   - component: {fileID: 970560458}
   - component: {fileID: 970560460}
+  - component: {fileID: 970560461}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -9398,6 +9399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   speed: 3
+  running_Effect: {fileID: 970560461}
 --- !u!50 &970560451
 Rigidbody2D:
   serializedVersion: 5
@@ -9547,7 +9549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInvincible: 0
-  player_Animation: {fileID: 0}
+  player_Animation: {fileID: 970560460}
   onDie:
     m_PersistentCalls:
       m_Calls: []
@@ -9591,7 +9593,7 @@ MonoBehaviour:
   player_Attack: {fileID: 970560457}
   staminaController: {fileID: 970560459}
   player_Animation: {fileID: 970560460}
-  hpController: {fileID: 0}
+  hpController: {fileID: 970560456}
   invincibilityDuration: 0.5
 --- !u!114 &970560459
 MonoBehaviour:
@@ -9626,6 +9628,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de70e4c5856fca4293018f31df12762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &970560461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970560449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74cd571c8c6e50948b95adaec7d7c031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 3382681666111023235, guid: 473801261b88fe243a2391ffd10c6682,
+    type: 3}
+  isExisting: 0
 --- !u!1 &989824850
 GameObject:
   m_ObjectHideFlags: 0

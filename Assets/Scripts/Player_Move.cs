@@ -4,6 +4,7 @@ public class Player_Move : MonoBehaviour
 {
     public bool canMove = true;
     bool isRunning = false;
+    bool isWalking = false;
     public float speed;
     Rigidbody2D rb;
     Vector2 dir;
@@ -22,6 +23,14 @@ public class Player_Move : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             isRunning = false;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            isWalking = true;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            isWalking = false;
         }
     }
     void FixedUpdate()
@@ -98,7 +107,11 @@ public class Player_Move : MonoBehaviour
                     running_Effect.PlayEffect(0);
                 }
             }
-        }    
+        }
+        else if (isWalking)
+        {
+            dir *= 0.5f;
+        }
         rb.linearVelocity = speed * dir;
     }
     float rollPower = 10f;
