@@ -8,6 +8,7 @@ public class Player_Move : MonoBehaviour
     Rigidbody2D rb;
     Vector2 dir;
     Vector2 playerDirection;
+    public Running_Effect running_Effect;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -53,7 +54,51 @@ public class Player_Move : MonoBehaviour
         if (!canMove) return;
 
         dir.Normalize();
-        if(isRunning) dir *= 2;
+        if (isRunning)
+        {
+            dir *= 2;
+            if (dir.x > 0)
+            {
+                if (dir.y > 0)
+                {
+                    running_Effect.PlayEffect(5);
+                }
+                else if (dir.y < 0)
+                {
+                    running_Effect.PlayEffect(7);
+                }
+                else
+                {
+                    running_Effect.PlayEffect(6);
+                }
+            }
+            else if (dir.x < 0)
+            {
+                if (dir.y > 0)
+                {
+                    running_Effect.PlayEffect(3);
+                }
+                else if (dir.y < 0)
+                {
+                    running_Effect.PlayEffect(1);
+                }
+                else
+                {
+                    running_Effect.PlayEffect(2);
+                }
+            }
+            else
+            {
+                if (dir.y > 0)
+                {
+                    running_Effect.PlayEffect(4);
+                }
+                else if (dir.y < 0)
+                {
+                    running_Effect.PlayEffect(0);
+                }
+            }
+        }    
         rb.linearVelocity = speed * dir;
     }
     float rollPower = 10f;
