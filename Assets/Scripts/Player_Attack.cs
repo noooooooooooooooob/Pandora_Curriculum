@@ -7,6 +7,7 @@ public class Player_Attack : MonoBehaviour
     Camera cam;
     public Camera_Follow camera_Follow;
     public Player_Move player_Move;
+    public Player_Animation player_Animation;
     public GameObject attackDisplay;
     public GameObject attackPrefab;
     float isCharging = 0;
@@ -35,6 +36,7 @@ public class Player_Attack : MonoBehaviour
             isCharging = Mathf.Clamp(isCharging, 0, maxCharge);
             camera_Follow.PlusCameraSize(isCharging);
             DisplayAttack(isCharging / maxCharge * maxAttackDisplayWidth);
+            player_Animation.UpdateBow(isCharging / maxCharge);
         }
         else if (Input.GetMouseButtonUp(0))
         {
@@ -48,14 +50,12 @@ public class Player_Attack : MonoBehaviour
             player_Move.speed *= 2;
             attackDisplay.SetActive(false);
             camera_Follow.ResetCameraSize();
+            player_Animation.UpdateBow(0);
         }
     }
     void DisplayAttack(float range)
     {
-        Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        float x = mousePos.x - transform.position.x;
-        float y = mousePos.y - transform.position.y;
-        angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+        angle = Player_Method.GetMouseToRotation(transform).z;
         attackDisplay.transform.rotation = Quaternion.Euler(0, 0, angle);
         attackDisplay.GetComponent<SpriteRenderer>().size = new Vector2(range, 1);
     }
