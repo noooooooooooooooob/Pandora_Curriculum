@@ -432,6 +432,7 @@ MonoBehaviour:
   fullSpriteRenderer: {fileID: 1346816498}
   damageEffect: {fileID: 80491681}
   delay: 0.7
+  term: 0.2
   damageTime: 0.5
   soundName: Attack4
 --- !u!212 &57918249
@@ -900,8 +901,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 1987090730}
   damageEffect: {fileID: 965903924}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &94590635
 SpriteRenderer:
@@ -1998,8 +2000,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 547238602}
   damageEffect: {fileID: 1646753813}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &271867151
 SpriteRenderer:
@@ -2151,8 +2154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 1372602401}
   damageEffect: {fileID: 1094098993}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &279277919
 SpriteRenderer:
@@ -2711,8 +2715,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 1725930052}
   damageEffect: {fileID: 1914713009}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &374538711
 SpriteRenderer:
@@ -3070,8 +3075,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 1512397608}
   damageEffect: {fileID: 1346929771}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &490805523
 SpriteRenderer:
@@ -11918,8 +11924,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 1003039959}
   damageEffect: {fileID: 2128839895}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &656584210
 SpriteRenderer:
@@ -12899,8 +12906,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 717235575}
   damageEffect: {fileID: 1411684986}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &752985959
 SpriteRenderer:
@@ -13006,8 +13014,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 572455990}
   damageEffect: {fileID: 221863726}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &782584322
 SpriteRenderer:
@@ -13096,7 +13105,7 @@ PrefabInstance:
         type: 3}
       propertyPath: collider
       value: 
-      objectReference: {fileID: 1377165664}
+      objectReference: {fileID: 1377165663}
     - target: {fileID: 501018509744566456, guid: 011d2ef27bc56bb47b54f645e8798b8b,
         type: 3}
       propertyPath: maxScale
@@ -14425,8 +14434,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 705909048}
   damageEffect: {fileID: 1385303348}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &1040935422
 SpriteRenderer:
@@ -16792,8 +16802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 98597115}
   damageEffect: {fileID: 1114087348}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &1355471664
 SpriteRenderer:
@@ -16885,8 +16896,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 480284551718680361, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
+      propertyPath: term
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480284551718680361, guid: 069aee427eee82e48aaf964a96eced4b,
+        type: 3}
       propertyPath: delay
-      value: 0.7
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 480284551718680361, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -16896,7 +16912,7 @@ PrefabInstance:
     - target: {fileID: 480284551718680361, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
       propertyPath: damageTime
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 778200700555239230, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -16910,8 +16926,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1105335809149121950, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
+      propertyPath: term
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105335809149121950, guid: 069aee427eee82e48aaf964a96eced4b,
+        type: 3}
       propertyPath: delay
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1105335809149121950, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -16921,7 +16942,7 @@ PrefabInstance:
     - target: {fileID: 1105335809149121950, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
       propertyPath: damageTime
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1301890773751712035, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -16985,8 +17006,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3136126979104526389, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
+      propertyPath: term
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136126979104526389, guid: 069aee427eee82e48aaf964a96eced4b,
+        type: 3}
       propertyPath: delay
-      value: 0.7
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3136126979104526389, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -16996,7 +17022,7 @@ PrefabInstance:
     - target: {fileID: 3136126979104526389, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
       propertyPath: damageTime
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3329267137223228241, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -17095,8 +17121,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6842834767027175819, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
+      propertyPath: term
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842834767027175819, guid: 069aee427eee82e48aaf964a96eced4b,
+        type: 3}
       propertyPath: delay
-      value: 0.7
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6842834767027175819, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -17106,7 +17137,7 @@ PrefabInstance:
     - target: {fileID: 6842834767027175819, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
       propertyPath: damageTime
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7135335420631426018, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -17125,8 +17156,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9058827360323828762, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
+      propertyPath: term
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058827360323828762, guid: 069aee427eee82e48aaf964a96eced4b,
+        type: 3}
       propertyPath: delay
-      value: 0.7
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9058827360323828762, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -17136,7 +17172,7 @@ PrefabInstance:
     - target: {fileID: 9058827360323828762, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
       propertyPath: damageTime
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5246628834753314383, guid: 069aee427eee82e48aaf964a96eced4b, type: 3}
@@ -17791,6 +17827,7 @@ MonoBehaviour:
   fullSpriteRenderer: {fileID: 899276714}
   damageEffect: {fileID: 1351974951}
   delay: 0.7
+  term: 0.2
   damageTime: 0.5
   soundName: Attack4
 --- !u!212 &1408670117
@@ -18091,7 +18128,7 @@ MonoBehaviour:
   - {fileID: 1966293136}
   - {fileID: 1780261760}
   repetitionTime: 3
-  term: 0.1
+  term: 0.08
   targetPos: {fileID: 970560454}
   angleJitter: 5
   realignEachWave: 1
@@ -18770,6 +18807,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 480284551718680361, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
+      propertyPath: term
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 480284551718680361, guid: 069aee427eee82e48aaf964a96eced4b,
+        type: 3}
       propertyPath: delay
       value: 0.7
       objectReference: {fileID: 0}
@@ -18787,6 +18829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 8.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105335809149121950, guid: 069aee427eee82e48aaf964a96eced4b,
+        type: 3}
+      propertyPath: term
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1105335809149121950, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -18862,6 +18909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136126979104526389, guid: 069aee427eee82e48aaf964a96eced4b,
+        type: 3}
+      propertyPath: term
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3136126979104526389, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -18960,6 +19012,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6842834767027175819, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
+      propertyPath: term
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842834767027175819, guid: 069aee427eee82e48aaf964a96eced4b,
+        type: 3}
       propertyPath: delay
       value: 0.7
       objectReference: {fileID: 0}
@@ -18987,6 +19044,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058827360323828762, guid: 069aee427eee82e48aaf964a96eced4b,
+        type: 3}
+      propertyPath: term
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9058827360323828762, guid: 069aee427eee82e48aaf964a96eced4b,
         type: 3}
@@ -19117,7 +19179,7 @@ PrefabInstance:
     - target: {fileID: 4540121385802880711, guid: 61b25f12f6f82fe4bb2cfc2bf2ef39e4,
         type: 3}
       propertyPath: damageTime
-      value: 1.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6001625188500839149, guid: 61b25f12f6f82fe4bb2cfc2bf2ef39e4,
         type: 3}
@@ -19319,8 +19381,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 320994003}
   damageEffect: {fileID: 1051686934}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &1634375751
 SpriteRenderer:
@@ -21616,8 +21679,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 535665073}
   damageEffect: {fileID: 1690664203}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &1731957126
 SpriteRenderer:
@@ -21723,8 +21787,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 386102928}
   damageEffect: {fileID: 1335624327}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &1740729829
 SpriteRenderer:
@@ -21906,8 +21971,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 973459760}
   damageEffect: {fileID: 1321650159}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &1770434252
 SpriteRenderer:
@@ -22013,8 +22079,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 1887507942}
   damageEffect: {fileID: 63902615}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &1779862591
 SpriteRenderer:
@@ -22132,8 +22199,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 1713401680}
   damageEffect: {fileID: 2059201813}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &1859834912
 SpriteRenderer:
@@ -22326,8 +22394,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 1517529626}
   damageEffect: {fileID: 712249958}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &1899222961
 SpriteRenderer:
@@ -23229,8 +23298,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 483110888}
   damageEffect: {fileID: 16920214}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &2046097713
 SpriteRenderer:
@@ -23609,8 +23679,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullSpriteRenderer: {fileID: 741053225}
   damageEffect: {fileID: 1964358208}
-  delay: 0.7
-  damageTime: 0.5
+  delay: 0.2
+  term: 0
+  damageTime: 0.3
   soundName: Attack4
 --- !u!212 &2104683547
 SpriteRenderer:

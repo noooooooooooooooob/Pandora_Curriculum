@@ -10,6 +10,7 @@ public class Attack4 : MonoBehaviour
     public SpriteRenderer fullSpriteRenderer;
     public GameObject damageEffect;
     public float delay;
+    public float term;
     public float damageTime;
     bool isDamaging = false;
     float startTime;
@@ -62,7 +63,7 @@ public class Attack4 : MonoBehaviour
             damageEffect.transform.localPosition = new Vector3(0, startLocalY, 0);
             damageEffect.SetActive(false);
         }
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(term);
         isDamaging = false;
         gameObject.SetActive(false);
     }

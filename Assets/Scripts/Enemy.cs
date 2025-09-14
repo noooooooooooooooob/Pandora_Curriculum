@@ -92,7 +92,7 @@ public class Enemy : MonoBehaviour
                         }
                         else
                         {
-                            int n = Random.Range(0, 4);
+                            int n = Random.Range(0,4);
                             switch (n)
                             {
                                 case 0:

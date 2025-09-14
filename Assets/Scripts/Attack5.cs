@@ -7,7 +7,7 @@ public class Attack5 : MonoBehaviour
     public List<GameObject> attackList;
     public int repetitionTime = 3;
     public float term = 0.5f;
-    float faster = 0.96f;
+    float faster = 0.95f;
     public Transform targetPos;
     public float angleJitter = 5f; 
     public bool realignEachWave = true;
@@ -32,29 +32,27 @@ public class Attack5 : MonoBehaviour
         angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
         float rd = Random.Range(-angleJitter, angleJitter);
-        transform.rotation = Quaternion.Euler(0, 0, angle - 90f + rd);
+        transform.rotation = Quaternion.Euler(0, 0, angle+ rd);
     }
 
     IEnumerator StartPattern()
+{
+    float currentTerm = term; // 웨이브별 간격
+
+    for (int i = 0; i < repetitionTime; i++)
     {
-        float originalTerm = term;
-        for (int i = 0; i < repetitionTime; i++)
+        for(int j = 0; j < attackList.Count; j++)
         {
-            term = originalTerm;
-            if (realignEachWave) SetAngle();
-            foreach (var attack in attackList)
-            {
-                if (!attack) continue;
+            if (!attackList[j]) attackList[j].SetActive(false);
 
-                attack.SetActive(true);
-                yield return new WaitForSeconds(term);
-                term *= faster;
-            }
-            yield return new WaitUntil(AllInactive);
+            attackList[j].SetActive(true);
+            yield return new WaitForSeconds(currentTerm);
         }
-
-        gameObject.SetActive(false);
+        currentTerm *= faster; // faster = 0.99f 등
     }
+    yield return new WaitUntil(AllInactive);
+    gameObject.SetActive(false);
+}
 
     bool AllInactive()
     {

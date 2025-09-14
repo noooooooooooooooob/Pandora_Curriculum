@@ -11,14 +11,13 @@ public class Attack : MonoBehaviour
     public float damageTime;
     float startTime;
     protected bool isDamaging = false;
+    public float maxScale;
     [SerializeField] String soundName;
     void OnEnable()
     {
         startTime = Time.time;
         fullCollider.enabled = false;
-        Color c = fullSpriteRenderer.color;
-        c.a = 0f;
-        fullSpriteRenderer.color = c;
+        fullSpriteRenderer.transform.localScale = new Vector3(0, 0, 1);
     }
     void Update()
     {
@@ -45,9 +44,7 @@ public class Attack : MonoBehaviour
 
         if (fullSpriteRenderer != null)
         {
-            Color c = fullSpriteRenderer.color;
-            c.a = alpha;
-            fullSpriteRenderer.color = c;
+            fullSpriteRenderer.transform.localScale = new Vector3(alpha, alpha, 1);
         }
     }
     IEnumerator DisableAfterDamageTime()
