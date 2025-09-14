@@ -29,6 +29,7 @@ public class Player_Animation : MonoBehaviour
     public void UpdateBow(float ratio)
     {
         int idx = Mathf.FloorToInt(ratio * (sprites.Count));
+        if (idx >= sprites.Count) idx = sprites.Count - 1;
         spriteRenderer.sprite = sprites[idx];
     }
 }

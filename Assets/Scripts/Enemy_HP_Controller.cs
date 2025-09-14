@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 
 public class Enemy_HP_Controller : MonoBehaviour
 {
+    SpriteRenderer spriteRenderer;
     public UnityEvent onDie;
     public Slider hpBar;
     public TextMeshProUGUI hpText;
@@ -13,6 +15,7 @@ public class Enemy_HP_Controller : MonoBehaviour
     int currentHP;
     public void Damage(int damageAmount)
     {
+        StartCoroutine(FlashRed(0.2f));
         currentHP -= damageAmount;
         if (currentHP < 0)
         {
@@ -27,14 +30,20 @@ public class Enemy_HP_Controller : MonoBehaviour
         currentHP = maxHP;
         hpBar.value = 0;
         hpText.text = "100 %";
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Damage(10);
-            DOTween.CompleteAll();
+            Damage(collision.gameObject.GetComponent<Bullet>().damage);
             Destroy(collision.gameObject);
         }
+    }
+    IEnumerator FlashRed(float time)
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(time);
+        spriteRenderer.color = Color.white;
     }
 }
